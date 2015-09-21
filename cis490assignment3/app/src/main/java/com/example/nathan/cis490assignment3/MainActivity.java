@@ -30,6 +30,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     ListView mainListView;
     ArrayAdapter mArrayAdapter;
     ArrayList mNameList = new ArrayList();
+ShareActionProvider mShareActionProvider;
     private static final String PREFS = "prefs";
     private static final String PREF_NAME = "name";
     SharedPreferences mSharedPreferences;
@@ -137,6 +138,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if (shareItem != null) {
             mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
         }
+
+        // Create an Intent to share your content
+        setShareIntent();
+
+        return true;
+    }
 
         // Create an Intent to share your content
         setShareIntent();
